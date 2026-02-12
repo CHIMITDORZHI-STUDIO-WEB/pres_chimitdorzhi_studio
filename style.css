@@ -565,18 +565,28 @@ img {
 }
 
 .stat {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    line-height: 1;
+    margin-bottom: 6px;
 }
 
 .stat-number {
-    display: block;
     font-size: 2.2rem;
     font-weight: 800;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    line-height: 1.2;
 }
 
 .stat-plus {
@@ -586,6 +596,7 @@ img {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    margin-top: -8px;
 }
 
 .stat-label {
