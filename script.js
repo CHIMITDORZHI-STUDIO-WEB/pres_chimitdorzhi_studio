@@ -246,6 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function animateCounters() {
         statNumbers.forEach(numEl => {
             const target = parseInt(numEl.dataset.target);
+            const suffix = numEl.dataset.suffix || '';
             const duration = 2000;
             const start = performance.now();
 
@@ -254,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const progress = Math.min(elapsed / duration, 1);
                 // Spring ease out
                 const eased = 1 - Math.pow(1 - progress, 4);
-                numEl.textContent = Math.round(eased * target);
+                numEl.textContent = Math.round(eased * target) + suffix;
                 if (progress < 1) requestAnimationFrame(update);
             }
             requestAnimationFrame(update);
